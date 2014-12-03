@@ -5,8 +5,10 @@
 \documentclass{resume}
 
 \usepackage{bookmark}
+\usepackage{graphicx}
 \usepackage{paralist}
 \usepackage{multirow}
+\usepackage{marvosym}
 
 % Modify document margins
 \usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry}
@@ -21,17 +23,45 @@
 \addbibresource{bib/resume.bib}
 \addbibresource{bib/proceedings.bib}
 
+
+% Logo Commands
+
+\newcommand\githublogo{\raisebox{-1pt}{\includegraphics[height=9pt]{logos/github.pdf}}\ }
+\newcommand\linkedinlogo{\raisebox{-1pt}{\includegraphics[height=9pt]{logos/linkedin.pdf}}\ }
+\newcommand\emaillogo{\raisebox{-1pt}{\Letter}\ }
+\newcommand\homephonelogo{\raisebox{-1pt}{\Telefon}\ }
+\newcommand\cellphonelogo{\raisebox{-1pt}{\Mobilefone}\ }
+\newcommand*{\github}[1]{\githublogo\href{https://#1}{#1}}
+\newcommand*{\linkedin}[1]{\linkedinlogo\href{https://#1}{#1}}
+\newcommand*{\email}[1]{\emaillogo\href{mailto:#1}{\nolinkurl{#1}}}
+\newcommand*{\homephone}[1]{\homephonelogo{#1}}
+\newcommand*{\cellphone}[1]{\cellphonelogo{#1}}
+
+
 %-----------------------
 %   HEADER SECTION
 %-----------------------
 
 \name{Georgios ``George'' Balatsouras}
-\address{23 Achaion Street \\ Agia Paraskevi (Athens 15343), Attica, Greece}
-\address{(Home) +30 210 6004683 \\ (Cell) +30 6944 205788 \\
-  \href{mailto:gbalats@gmail.com}{\nolinkurl{gbalats@gmail.com}}}
+
+\address{23 Achaion Street \\
+  Agia Paraskevi (Athens 15343), Attica, Greece
+  \hfill{\email{gbalats@gmail.com}}
+}
+
+\address{\homephone{+30 210 6004683} \hspace{0.2cm}
+  \cellphone{+30 6944 205788}
+  \hfill{\github{github.com/gbalats}}
+}
+
+% \address{
+%   \hfill{\linkedin{gr.linkedin.com/pub/george-balatsouras}}
+% }
+
 
 \begin{document}
 \newcommand{\mytilde}{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}
+
 
 %------------------------------
 %     EDUCATION SECTION
