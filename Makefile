@@ -2,10 +2,15 @@ TEX = pdflatex -shell-escape -interaction=nonstopmode -file-line-error
 BIB = bibtex -min-crossrefs=9000
 PDF = $(addsuffix .pdf, resume)
 
+all: resume.pdf transcript.pdf
+
 $(PDF): %.pdf : %.tex
 	$(TEX) $<
 	$(BIB) $*.aux
 	$(TEX) $<
+	$(TEX) $<
+
+transcript.pdf: transcript.tex
 	$(TEX) $<
 
 $(PDF): $(wildcard bib/*.bib)
